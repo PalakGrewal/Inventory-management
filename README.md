@@ -1,1 +1,1 @@
-# Inventory-management
+# Inventory-Management-System-Mini-Project-
