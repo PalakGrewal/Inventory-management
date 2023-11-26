@@ -39,11 +39,10 @@ const Sidebar = ({ children }) => {
 
   return (
     <div
-      className="flex 
-    	min-height: 0px;
-    min-h-min h-screen text-4xl float-left"
+      className="flex
+     h-[90%] text-4xl float-left mr-4"
     >
-      <div className="sidebar flex sticky flex-col gap-3 text-white bg-gray-700 mt-2 ml-2 mb-2 rounded text-4xl ">
+      <div className="sidebar flex sticky flex-col text-white bg-gray-700 mt-2 ml-2 mb-2 rounded text-4xl ">
         <div className="bars pt-4  pb-2 px-4 ">
           <FaBars onClick={toggle} />
         </div>
