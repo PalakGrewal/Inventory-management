@@ -44,7 +44,7 @@ const Sidebar = ({ children }) => {
     min-h-min h-screen text-4xl float-left"
     >
       <div className="sidebar flex sticky flex-col gap-3 text-white bg-gray-700 mt-2 ml-2 mb-2 rounded text-4xl ">
-        <div className="bars pt-4  pb-2 px-4 ">
+        <div className="bars pt-4 pb-2 px-4 ">
           <FaBars onClick={toggle} />
         </div>
         {menuItem.map((item, index) => (
