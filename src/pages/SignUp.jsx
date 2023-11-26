@@ -1,8 +1,16 @@
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function SignUp() {
+
+  const navigate = useNavigate();
+  const sumbmitHandler = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
+
   return (
-    <form>
+    <form onSubmit={sumbmitHandler}>
       <div className="space-y-12 w-1/2">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -140,6 +148,17 @@ export default function Login() {
         >
           Cancel
         </button>
+      </div>
+      <div>
+        <p className="mt-2 text-sm text-gray-600">
+          Already have an account?{" "}
+          <Link
+            to="/sign-in"
+            className="text-primary-500 text-small-semibold ml-1 font-medium text-indigo-600 hover:text-indigo-500"
+          >
+            Sign In
+          </Link>
+        </p>
       </div>
     </form>
   );
