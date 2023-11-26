@@ -23,7 +23,6 @@ const Sidebar = ({ children }) => {
       icon: <GrSystem />,
     },
     { path: "/categories", name: "Categories", icon: <MdCategory /> },
-
     { path: "/orders", name: "Orders", icon: <MdProductionQuantityLimits /> },
     { path: "/reports", name: "Reports", icon: <TbFileReport /> },
     { path: "/roles", name: "Roles", icon: <FaUsers /> },
@@ -38,11 +37,13 @@ const Sidebar = ({ children }) => {
   ];
 
   return (
-    <div className="flex
-    min-h-0	min-height: 0px;
-    min-h-min h-screen text-4xl ">
-      <div className="sidebar flex sticky flex-col gap-3 text-white bg-gray-700 mt-2 ml-2 mb-2 rounded text-4xl ">
-        <div className="bars pt-4  pb-2 px-4 ">
+    <div className="flex">
+      <div
+        className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${
+          isOpen ? "w-48" : "w-16"
+        } mt-2 ml-2 mb-2 rounded text-4xl transition-all ease-in-out`}
+      >
+        <div className="bars pt-4 pb-2 px-4">
           <FaBars onClick={toggle} />
         </div>
         {menuItem.map((item, index) => (
@@ -50,26 +51,25 @@ const Sidebar = ({ children }) => {
             to={item.path}
             key={index}
             className="link flex p-3 hover:bg-gray-800 focus:bg-gray-900 items-center rounded"
-            activeclassName="active"
+            activeClassName="active"
           >
-            <div className="icon px-2 ">{item.icon}</div>
+            <div className="icon px-2">{item.icon}</div>
             <div
               style={{ display: isOpen ? "block" : "none" }}
-              className="link_text text-base font-semibold "
+              className="link_text text-base font-semibold"
             >
               {item.name}
             </div>
           </NavLink>
         ))}
       </div>
-      <main className="p-6 w-full bg-gray-100 m-2 rounded shadow-black">
-      {children}
-      {/* <Typewriter
-        words={[{children}]}
-        loop={Infinity}
-               
-            /> */}
-        </main>
+      <div
+        className={`main-content ${
+          isOpen ? "ml-48" : "ml-16"
+        } transition-all ease-in-out flex-grow min-h-screen p-4`}
+      >
+        {children}
+      </div>
     </div>
   );
 };
