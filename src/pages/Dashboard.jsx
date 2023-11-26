@@ -1,14 +1,14 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar'
-import Header from '../components/Header'
-import { Outlet } from 'react-router'
+import Layout from '../components/Layout';
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboards
-    </div>
-  )
-}
+    <Layout>
+      <div className='p-6'>
+        <h1 className='text-2x1 font-semibold text-gray-900'>Dashboard</h1>
+      </div>
+    </Layout>
+  );
+};
 
 export default Dashboard
