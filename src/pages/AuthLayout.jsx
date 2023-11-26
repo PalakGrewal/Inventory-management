@@ -5,11 +5,13 @@ import { Outlet } from 'react-router'
 
 function AuthLayout() {
     return (
-        <>
-          <Header/>
-          <Sidebar/>
-          <Outlet/>      
-        </>
+        <div className='h-[100vh]'>
+          <Header className="h-[10vh]"/>
+          <div className='flex '>
+          <Sidebar  />
+          <Outlet className=""/>   
+          </div>   
+        </div>
     )
 }
 
