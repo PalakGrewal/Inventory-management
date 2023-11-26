@@ -7,8 +7,6 @@ import Table from "../components/Table";
 const Dashboard = () => {
   return (
 
-    <div className="p-8">
-
     <div>
       <Kpi />
       <Chart/>
@@ -16,6 +14,6 @@ const Dashboard = () => {
       <Table/>
     </div>
   );
-};    
 };
+
 export default Dashboard;
