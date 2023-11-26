@@ -1,14 +1,19 @@
+import React from "react";
+
+import Chart from "../components/Chart";
+import Kpi from "../components/Kpi/Kpi";
+import Table from "../components/Table";
 import React from 'react'
-import Layout from '../components/Layout';
 
 const Dashboard = () => {
   return (
-    <Layout>
-      <div className='p-6'>
-        <h1 className='text-2x1 font-semibold text-gray-900'>Dashboard</h1>
-      </div>
-    </Layout>
+    <div>
+      <Kpi />
+      <Chart/>
+     
+      <Table/>
+    </div>
   );
 };
 
-export default Dashboard
+export default Dashboard;
