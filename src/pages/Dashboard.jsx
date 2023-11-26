@@ -5,9 +5,9 @@ import { Outlet } from 'react-router'
 
 const Dashboard = () => {
   return (
-    <>
-      Dashboard
-    </>
+    <div>
+      Dashboards
+    </div>
   )
 }
 
