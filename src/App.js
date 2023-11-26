@@ -20,7 +20,7 @@ import AuthLayout from "./pages/AuthLayout";
 
 function App() {
   return (
-    <div className="flex bg-gray-200 h-screen text-base">
+    <div className="flex flex-col bg-gray-200 h-screen text-base">
       <Routes>
         <Route element={<Layout />}>
         <Route path="/" element={<SignUp />} />
