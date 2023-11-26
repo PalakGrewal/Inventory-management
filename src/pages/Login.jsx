@@ -1,9 +1,16 @@
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 
 export default function Login() {
+  const navigate = useNavigate();
+  const sumbmitHandler = (e) => {
+    e.preventDefault();
+    navigate("/dashboard");
+  };
   return (
-    <form>
-      <div className="space-y-12 w-1/2">
+    <form onSubmit={sumbmitHandler}>
+      <div className=" pl-9 pt-5 flex flex-col space-y-12 w-1/2">
         <div className="">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
             Sign In
@@ -74,13 +81,24 @@ export default function Login() {
         
       </div>
 
-      <div className="mt-10 flex items-center justify-start gap-x-6">
+      <div className="pl-9 pt-5 mt-10 flex items-center justify-start gap-x-6">
         <button
           type="submit"
           className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Log In
         </button>
+      </div>
+      <div>
+        <p className="pl-9 pt-2 mt-2 text-sm text-gray-600">
+          Don't have an account?{" "}
+          <Link
+            to="/sign-up"
+            className="font-medium text-indigo-600 hover:text-indigo-500"
+          >
+            Sign Up
+          </Link>
+        </p>
       </div>
     </form>
   );
