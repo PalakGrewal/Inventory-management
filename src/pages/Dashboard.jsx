@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+
+import Chart from "../components/Chart";
+import Kpi from "../components/Kpi/Kpi";
+import Table from "../components/Table";
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
-  )
-}
+    <div>
+      <Kpi />
+      <Chart/>
+     
+      <Table/>
+    </div>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
