@@ -9,4 +9,4 @@ const Kpis = (props) => {
   )
 }
 
-export default Kpis
+export default Kpis;
