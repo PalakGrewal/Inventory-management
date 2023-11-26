@@ -1,1 +1,9 @@
 node_modules
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+.env
+/xsaxa
+=======
+>>>>>>> 1fb32d0 (initial commit)
+>>>>>>> Stashed changes
