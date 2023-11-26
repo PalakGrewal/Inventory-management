@@ -5,7 +5,7 @@ import { Outlet } from "react-router";
 
 function AuthLayout() {
   return (
-    <div className="flex flex-col h-screen">
+      <div className="flex flex-col h-screen">
       <Header />
       <div className="flex flex-col z-30">
         <Outlet />
