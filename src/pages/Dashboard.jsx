@@ -15,7 +15,7 @@ const Dashboard = () => {
      
       <Table/>
     </div>
+    </div>
   );
-};    
-
+};
 export default Dashboard;

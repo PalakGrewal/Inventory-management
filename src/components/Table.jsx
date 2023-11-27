@@ -148,6 +148,38 @@ function Table() {
               </td>
               <td className="p-2">
                 <Hgray data="Units">Units</Hgray>
+    <div className='flex mt-8 flex-col w-1/2'>
+      <H1 data="Top selling items"></H1>
+      <table className='pl-8 pt-8 text-4xl'>
+        <thead className=''>
+          <tr>
+            <td className="p-2">
+              <Hgray data="Product Image">Product Image</Hgray>
+            </td>
+            <td className="p-2">
+              <Hgray data="Item Name">Item Name</Hgray>
+            </td>
+            <td className="p-2">
+              <Hgray data="Items Sold">Items Sold</Hgray>
+            </td>
+            <td className="p-2">
+              <Hgray data="On Hand">On Hand</Hgray>
+            </td>
+            <td className="p-2">
+              <Hgray data="Units">Units</Hgray>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((value, key) => (
+            <tr key={key} className='hover:bg-gray-200 rounded-lg'>
+              <td className="p-2">
+                <img
+                  className="rounded-lg"
+                  src={value.prod_image}
+                  alt={`Product ${key + 1}`}
+                  style={{ width: "100px", height: "100px" }}
+                />
               </td>
             </tr>
           </thead>
