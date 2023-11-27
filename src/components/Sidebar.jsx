@@ -39,8 +39,9 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="flex ">
+    <div className="flex">
       <div
-        className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${
+        className={`sidebar flex flex-col text-white bg-gray-700 ${
           isOpen ? "w-48" : "w-16"
         } mt-2 ml-2 mb-2 rounded text-4xl transition-all ease-in-out`}
       >

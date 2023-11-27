@@ -26,7 +26,6 @@ const Categories = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate loading data from the server
     setIsLoading(true);
 
     // Simulate API call
