@@ -38,6 +38,7 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="flex ">
+    <div className="flex">
       <div
         className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${
           isOpen ? "w-48" : "w-16"
