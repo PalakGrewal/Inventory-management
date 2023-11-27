@@ -89,14 +89,14 @@ const HighDemand = [
 
 function Table() {
   return (
-    <div className="flex flex-wrap gap-4">
-      <div>
+    <div className="flex flex-wrap gap-6">
+      <div className="p-4 basis-1/2" >
         <H1 data="Top selling items"></H1>
-        <table className="pl-8 pt-8">
-          <thead>
+        <table className="pl-8 pt-8 text-4xl">
+          <thead className="">
             <tr>
               <td className="p-2">
-                <Hgray data="Photo">Photo</Hgray>
+                <Hgray data="Photo">Product Image</Hgray>
               </td>
               <td className="p-2">
                 <Hgray data="Item Name">Item Name</Hgray>
@@ -119,23 +119,22 @@ function Table() {
                   <img
                     className="rounded-lg"
                     src={value.prod_image}
-                    alt={`Product ${key + 1}`}
-                    style={{ width: "50px", height: "30px" }}
+                    style={{ width: "60px", height: "60px" }}
                   />
                 </td>
-                <td className="p-2 text-sm text-center">{value.name}</td>
-                <td className="p-2 text-sm text-center">{value.itemsold}</td>
-                <td className="p-2 text-sm text-center">{value.Onhand}</td>
-                <td className="p-2 text-sm text-center">{value.units}</td>
+                <td className="p-2 text-base text-center">{value.name}</td>
+                <td className="p-2 text-base text-center">{value.itemsold}</td>
+                <td className="p-2 text-base text-center">{value.Onhand}</td>
+                <td className="p-2 text-base text-center">{value.units}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <div>
-        <H1 data="High Demand is Expected"></H1>
-        <table className="pl-8  pt-8">
-          <thead>
+      <div className="p-4 ">
+      <H1 data="High Demand is Expected"></H1>
+        <table className="pl-8 pt-8 text-4xl">
+          <thead className="">
             <tr>
               <td className="p-2">
                 <Hgray data="Photo">Photo</Hgray>
@@ -148,38 +147,6 @@ function Table() {
               </td>
               <td className="p-2">
                 <Hgray data="Units">Units</Hgray>
-    <div className='flex mt-8 flex-col w-1/2'>
-      <H1 data="Top selling items"></H1>
-      <table className='pl-8 pt-8 text-4xl'>
-        <thead className=''>
-          <tr>
-            <td className="p-2">
-              <Hgray data="Product Image">Product Image</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Item Name">Item Name</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Items Sold">Items Sold</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="On Hand">On Hand</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Units">Units</Hgray>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((value, key) => (
-            <tr key={key} className='hover:bg-gray-200 rounded-lg'>
-              <td className="p-2">
-                <img
-                  className="rounded-lg"
-                  src={value.prod_image}
-                  alt={`Product ${key + 1}`}
-                  style={{ width: "100px", height: "100px" }}
-                />
               </td>
             </tr>
           </thead>
@@ -190,8 +157,7 @@ function Table() {
                   <img
                     className="rounded-lg"
                     src={value.prod_image}
-                    alt={`Product ${key + 1}`}
-                    style={{ width: "50px", height: "30px" }}
+                    style={{ width: "60px", height: "60px" }}
                   />
                 </td>
                 <td className="p-2 text-sm text-center">{value.name}</td>
@@ -202,7 +168,6 @@ function Table() {
           </tbody>
         </table>
       </div>
-   
     </div>
   );
 }
