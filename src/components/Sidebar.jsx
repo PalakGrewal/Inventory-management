@@ -37,6 +37,7 @@ const Sidebar = ({ children }) => {
   ];
 
   return (
+    <div className="flex ">
     <div className="flex">
       <div
         className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${
@@ -65,8 +66,8 @@ const Sidebar = ({ children }) => {
       </div>
       <div
         className={`main-content ${
-          isOpen ? "ml-48" : "ml-16"
-        } transition-all ease-in-out flex-grow min-h-screen p-4`}
+          isOpen ? "ml-2" : "ml-1/2"
+        } transition-all ease-in-out flex-grow min-h-screen`}
       >
         {children}
       </div>
