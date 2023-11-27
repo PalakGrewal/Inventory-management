@@ -42,10 +42,10 @@ const data = [
 
 function Table() {
   return (
-    <div >
+    <div className='flex mt-8 flex-col w-1/2'>
       <H1 data="Top selling items"></H1>
-      <table className='pl-8 pt-8'>
-        <thead>
+      <table className='pl-8 pt-8 text-4xl'>
+        <thead className=''>
           <tr>
             <td className="p-2">
               <Hgray data="Product Image">Product Image</Hgray>
@@ -72,7 +72,7 @@ function Table() {
                   className="rounded-lg"
                   src={value.prod_image}
                   alt={`Product ${key + 1}`}
-                  style={{ width: "50px", height: "50px" }}
+                  style={{ width: "100px", height: "100px" }}
                 />
               </td>
               <td className="p-2 text-base text-center">{value.name}</td>
