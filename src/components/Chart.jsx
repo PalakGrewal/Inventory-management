@@ -43,7 +43,7 @@ function Chart() {
 
   return (
     
-    <div className="flex flex-wrap">
+    <div className="mt-5 border-[10px] p-2 gray-700 flex flex-wrap ">
       <div className="basis-1/2 ">
         <H1 data="Sales Order " />
         <div className="  pl-10 max-h-80">
@@ -52,7 +52,7 @@ function Chart() {
       </div>
       <div className="basis-1/2">
         <H1 data="Inventory" />
-        <div className="pl-10 max-h-80">
+        <div className="pl-5 max-h-80">
           <Doughnut data={Inventory} height={100} width={200} options={options} />
         </div>
       </div>
