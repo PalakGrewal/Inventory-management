@@ -38,6 +38,7 @@ const Sidebar = ({ children }) => {
 
   return (
     <div className="flex ">
+<<<<<<< HEAD
       <div className="flex">
         <div
           className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${isOpen ? "w-48" : "w-16"
@@ -52,6 +53,28 @@ const Sidebar = ({ children }) => {
               key={index}
               className="link flex p-3 hover:bg-gray-800 focus:bg-gray-900 items-center rounded"
               activeClassName="active"
+=======
+    <div className="flex">
+      <div
+        className={`sidebar flex flex-col text-white bg-gray-700 ${
+          isOpen ? "w-48" : "w-16"
+        } mt-2 ml-2 mb-2 rounded text-4xl transition-all ease-in-out`}
+      >
+        <div className="bars pt-4 pb-2 px-3">
+          <FaBars onClick={toggle} />
+        </div>
+        {menuItem.map((item, index) => (
+          <NavLink
+            to={item.path}
+            key={index}
+            className="link flex p-3 hover:bg-gray-800 focus:bg-gray-900 items-center rounded"
+            activeClassName="active"
+          >
+            <div className="icon">{item.icon}</div>
+            <div
+              style={{ display: isOpen ? "block" : "none" }}
+              className="link_text pl-2 text-base font-semibold"
+>>>>>>> 098b29bc0826788dc82e9861b437650ca5062ed1
             >
               <div className="icon">{item.icon}</div>
               <div
