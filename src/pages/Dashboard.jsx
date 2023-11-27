@@ -7,6 +7,8 @@ import Table from "../components/Table";
 const Dashboard = () => {
   return (
 
+  
+
     <div>
       <Kpi />
       <Chart/>
