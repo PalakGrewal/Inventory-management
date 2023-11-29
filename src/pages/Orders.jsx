@@ -3,6 +3,10 @@ import Modal from '../components/AddOrderModal';
 
 const Orders = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dummyEntries, setDummyEntries] = useState([
+    { id: 1, date: '2023-01-01', salesOrder: 'SO-001', reference: 'Ref-001', customerName: 'John Doe', status: 'Approved', amount: '$100.00', invoice: 'INV-001', payment: 'Paid' },
+    { id: 2, date: '2023-01-05', salesOrder: 'SO-002', reference: 'Ref-002', customerName: 'Jane Doe', status: 'Pending', amount: '$150.00', invoice: 'INV-002', payment: 'Pending' },
+  ])
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -12,12 +16,9 @@ const Orders = () => {
     setIsModalOpen(false);
   };
 
-  // Dummy entries for the table
-  const dummyEntries = [
-    { id: 1, date: '2023-01-01', salesOrder: 'SO-001', reference: 'Ref-001', customerName: 'John Doe', status: 'Approved', amount: '$100.00', invoice: 'INV-001', payment: 'Paid' },
-    { id: 2, date: '2023-01-05', salesOrder: 'SO-002', reference: 'Ref-002', customerName: 'Jane Doe', status: 'Pending', amount: '$150.00', invoice: 'INV-002', payment: 'Pending' },
-    // Add more dummy entries as needed
-  ];
+  const handleAddProductToTable = (newProduct) => {
+    setDummyEntries((prevEntries) => [...prevEntries, newProduct]);
+  };
 
   return (
     <div className="relative mt-4 sm:rounded-lg sm:space-y-0 ml-1 mr-1 w-full">
@@ -89,8 +90,11 @@ const Orders = () => {
           {/* Render dummy entries */}
           {dummyEntries.map((entry) => (
             <tr key={entry.id}>
-              <td>
-                {/* Add checkbox for selection if needed */}
+              <td className="p-4">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                />
               </td>
               <td className="px-6 py-3 border-b border-gray-300">{entry.date}</td>
               <td className="px-6 py-3 border-b border-gray-300">{entry.salesOrder}</td>
@@ -106,7 +110,7 @@ const Orders = () => {
       </table>
 
       {/* Modal for adding new product */}
-      {isModalOpen && <Modal closeModal={closeModal} />}
+      {isModalOpen && <Modal closeModal={closeModal} addProductToTable={handleAddProductToTable}/>}
     </div>
   );
 };
