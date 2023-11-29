@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ListFilter } from 'lucide-react';
 const Inventory = () => {
   return (
     <section className="inventory">
@@ -8,19 +8,13 @@ const Inventory = () => {
         <button type="submit">Search</button>
       </div>
       <div>
-        <h3>Inventory</h3>
-        <h5>Filter</h5>
-        <h5>New Item</h5>
-        <h5>Edit</h5>
-      </div>
-      <div>
         <h2 className="text-xl font-semibold">
           Inventory
         </h2>
         <ul className="list-style-type: none
   padding-left: 0">
           <li className="mb-2">
-            Filter
+          <ListFilter />Filter
           </li>
           <li className="mb-2">
             New Item
