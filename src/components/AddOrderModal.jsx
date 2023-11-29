@@ -48,7 +48,7 @@ const AddOrderModal = ({ closeModal, addProductToTable }) => {
         reference: orderData.reference,
         customerName: orderData.customerName,
         status: 'Pending',
-        amount: 'finalAmount.toFixed(2)', // You may add the logic to calculate the amount based on your requirements
+        amount: finalAmount.toFixed(2), // You may add the logic to calculate the amount based on your requirements
         invoice: `INV-${new Date().getTime()}`,
         payment: 'Pending',
       };
