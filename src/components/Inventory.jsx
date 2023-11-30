@@ -6,6 +6,7 @@ import { ListFilter } from "lucide-react";
 
 const Inventory = () => {
   return (
+    <section className="h-[88vh] overflow-y-scroll p-10 w-full">
     <section className="inventory h-[88vh] overflow-y-scroll p-10 w-full">
       <div>
       <h2 className="flex flex-1 justify-start text-4xl font-bold">Inventory Management</h2>

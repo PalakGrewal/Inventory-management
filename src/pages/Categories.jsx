@@ -91,7 +91,7 @@ const Categories = () => {
   }
 
   return (
-    <div className="h-[88vh] overflow-y-scroll p-10 container mx-auto ">
+    <div className="h-[88vh] overflow-y-scroll p-10 container mx-auto w-full">
       <h1 className="text-3xl font-bold mb-4">Inventory Categories</h1>
 
       <button
