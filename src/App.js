@@ -17,6 +17,7 @@ import Login from "./pages/Login";
 import About from "./pages/About";
 import Layout from "./pages/Layout";
 import AuthLayout from "./pages/AuthLayout";
+import Customers from "./pages/Customers";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/reports" element={<Reports />} />
           <Route path="/roles" element={<Roles />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/customers" element={<Customers />} />
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
