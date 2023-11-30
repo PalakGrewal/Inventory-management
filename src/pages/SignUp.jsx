@@ -1,16 +1,24 @@
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
 
 export default function SignUp() {
 
   const navigate = useNavigate();
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
   const sumbmitHandler = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    navigate("/dashboard", { state: { user } });
   };
 
   return (
-    <form onSubmit={sumbmitHandler}>
+    <form onSubmit={sumbmitHandler} className="overflow-y-scroll mt-6 p-10">
       <div className="flex flex-col pl-9 pt-5 space-y-12 w-1/2">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">

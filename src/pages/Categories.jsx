@@ -1,21 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import AddCategoryModal from '../components/AddCategoryModal';
-import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+import React, { useState, useEffect } from "react";
+import AddCategoryModal from "../components/AddCategoryModal";
+import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { TbLoader } from "react-icons/tb";
 
 const Categories = () => {
   const [categories, setCategories] = useState([
-    { id: 1, name: 'Electronics', productCount: 10, subcategories: [] },
-    { id: 2, name: 'Clothing', productCount: 15, subcategories: ['Men', 'Women'] },
-    { id: 3, name: 'Home and Living', productCount: 20, subcategories: ['Furniture', 'Decor'] },
+    { id: 1, name: "Electronics", productCount: 10, subcategories: [] },
+    {
+      id: 2,
+      name: "Clothing",
+      productCount: 15,
+      subcategories: ["Men", "Women"],
+    },
+    {
+      id: 3,
+      name: "Home and Living",
+      productCount: 20,
+      subcategories: ["Furniture", "Decor"],
+    },
   ]);
 
-  const [newCategory, setNewCategory] = useState('');
+  const [newCategory, setNewCategory] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate loading data from the server
     setIsLoading(true);
 
     // Simulate API call
@@ -39,7 +49,9 @@ const Categories = () => {
 
   const handleDeleteCategory = (categoryId) => {
     // Simulate deleting a category
-    const updatedCategories = categories.filter((category) => category.id !== categoryId);
+    const updatedCategories = categories.filter(
+      (category) => category.id !== categoryId
+    );
     setCategories(updatedCategories);
   };
 
@@ -71,7 +83,7 @@ const Categories = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="flex text-3xl justify-between mt-6">Loading...</div>;
   }
 
   if (error) {
@@ -79,7 +91,7 @@ const Categories = () => {
   }
 
   return (
-    <div className="container mx-auto mt-6">
+    <div className="h-[88vh] overflow-y-scroll p-10 container mx-auto ">
       <h1 className="text-3xl font-bold mb-4">Inventory Categories</h1>
 
       <button
@@ -91,7 +103,10 @@ const Categories = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {categories.map((category) => (
-          <div key={category.id} className="border p-4 rounded mb-4 flex flex-col">
+          <div
+            key={category.id}
+            className="border p-4 rounded mb-4 flex flex-col"
+          >
             <div className="flex justify-between items-center mb-2">
               <span className="text-xl font-bold">{category.name}</span>
               <div className="flex items-center">
@@ -99,7 +114,7 @@ const Categories = () => {
                   onClick={() =>
                     handleEditCategory(
                       category.id,
-                      prompt('Enter new category name:', category.name)
+                      prompt("Enter new category name:", category.name)
                     )
                   }
                   className="text-blue-600 mr-2"
@@ -115,12 +130,16 @@ const Categories = () => {
               </div>
             </div>
             <div className="flex flex-col lg:flex-row lg:justify-between">
-              <span className="text-gray-500 lg:mb-0 mb-2">Products: {category.productCount}</span>
+              <span className="text-gray-500 lg:mb-0 mb-2">
+                Products: {category.productCount}
+              </span>
               <button
                 onClick={() => handleToggleSubcategories(category.id)}
                 className="text-indigo-600 lg:self-end"
               >
-                {category.subcategoriesOpen ? 'Hide Subcategories' : 'Show Subcategories'}
+                {category.subcategoriesOpen
+                  ? "Hide Subcategories"
+                  : "Show Subcategories"}
               </button>
             </div>
             {category.subcategoriesOpen && (
