@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from '../components/AddOrderModal';
-import { ListFilter} from 'lucide-react';
 import { Pencil } from 'lucide-react';
 
 const Orders = () => {
@@ -8,7 +7,7 @@ const Orders = () => {
   const [selectedOption, setSelectedOption] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [dummyEntries, setDummyEntries] = useState([
-    { id: 1, item_img: 'https://unsplash.com/photos/pair-of-white-and-orange-athletic-shoes-on-white-box-dwKiHoqqxk8', item_name: 'Sneakers', pur_price: '$100', sell_price: '$150' , Onhand_units: '50', sold_units: '100', total_units: '150', dt_updated: '25-11-2023' },
+    { id: 1, item_img: 'https://unsplash.com/photos/pair-of-white-and-orange-athletic-shoes-on-white-box-dwKiHoqqxk8' , item_name: 'Sneakers', pur_price: '$100', sell_price: '$150' , Onhand_units: '50', sold_units: '100', total_units: '150', dt_updated: '25-11-2023' },
     { id: 2, item_img: 'https://unsplash.com/photos/space-gray-apple-watch-with-black-sports-band-hbTKIbuMmBI', item_name: 'Smart Watch', pur_price: '$200', sell_price: '$250' , Onhand_units: '80', sold_units: '110', total_units: '190', dt_updated: '25-11-2023' },
     { id: 4, item_img: 'https://unsplash.com/photos/modern-laptop-computer-on-wooden-table-T4u6X6xq2xk', item_name: 'Laptop', pur_price: '$1200', sell_price: '$1500', Onhand_units: '25', sold_units: '50', total_units: '75', dt_updated: '25-11-2023', },
     {
@@ -118,22 +117,23 @@ const Orders = () => {
     <div className="h-[88vh] overflow-y-scroll p-10 w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
-          <h1 className="text-xl font-bold">Inventory</h1>
+          <h1 className="text-3xl font-bold mb-3">Inventory</h1>
           <select
             className="mt-2 p-2 border border-gray-300 rounded"
             value={selectedOption}
             onChange={handleDropdownChange}
           >
             <option value="all">All items</option>
+            <option value="all">Electronics</option>
             <option value="approved">Clothing</option>
             <option value="pending">Home and Living</option>
-          </select>
-          <button className='ml-8 w-4 h-4'><Pencil className="inline mr-2 w-4 h-4"/>Edit</button>
+          </select >
+          <button className='ml-8 h-4 w-full'><Pencil className="inline mr-2 w-4 h-4"/>Edit</button>
         </div>
         <div className="flex items-center">
           {/* Add New Product button linked to modal */}
           <button
-            className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+            className="mr-2 mt-12 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
             onClick={openModal}
           >
             Add New Product
@@ -142,7 +142,7 @@ const Orders = () => {
           <input
             type="text"
             placeholder="Search for items"
-            className="p-2 border border-gray-300 rounded focus:ring focus:border-blue-300"
+            className="p-2 mt-12 border border-gray-300 rounded focus:ring focus:border-blue-300"
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -199,7 +199,7 @@ const Orders = () => {
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
               </td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.item_img}</td>
+              <td className="px-6 py-3 border-b border-gray-300"><img src={entry.item_img}/></td>
               <td className="px-6 py-3 border-b border-gray-300">{entry.item_name}</td>
               <td className="px-6 py-3 border-b border-gray-300">{entry.pur_price}</td>
               <td className="px-6 py-3 border-b border-gray-300">{entry.sell_price}</td>
