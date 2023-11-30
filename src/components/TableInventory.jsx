@@ -115,7 +115,7 @@ const Orders = () => {
   });
 
   return (
-    <div className="h-[88vh] overflow-y-scroll p-10 w-full">
+    <div className="w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
           <h1 className="text-xl font-bold">Inventory</h1>
