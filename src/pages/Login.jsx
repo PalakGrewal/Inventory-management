@@ -23,13 +23,13 @@ export default function Login() {
         .then((res) => {
           if (res.data === "Email already exists") {
             localStorage.setItem("token", res.data.token);
-            navigate("/dashboard");
-          } else {
-            alert("Login Failed");
+            navigate("/dashboard", { state: { id: email } });
+          } else if (res.data == "notexist") {
+            alert("User have not sign up");
           }
         })
         .catch((err) => {
-          alert("Login Failed");
+          alert("Some Error Occured");
           console.log(err);
         });
     } catch (e) {

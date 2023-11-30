@@ -40,13 +40,13 @@ app.post("/sign-up", async (req, res) => {
       res.json("Email already exists");
     } else {
       res.json("not exists");
-      await Collection.insertMany(data);
+      await Collection.insertMany([data]);
     }
   } catch (error) {
     res.json("not exists");
   }
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("server started on port 3001");
 });

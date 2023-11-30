@@ -1,4 +1,3 @@
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -25,8 +24,8 @@ export default function SignUp() {
           if (res.data === "Email already exists") {
             alert("User already exists");
             // navigate("/dashboard");
-          } else if(res.data = "not exists") {
-            navigate("/dashboard");
+          } else if ((res.data = "not exists")) {
+            navigate("/dashboard", { state: { id: email } });
           }
         })
         .catch((err) => {
