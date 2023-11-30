@@ -6,7 +6,7 @@ import TableInventory from './TableInventory'
 
 const Inventory = () => {
   return (
-    <section className="inventory">
+    <section className="inventory h-[88vh] overflow-y-scroll p-10 w-full">
       <div>
         <input type="text" placeholder="Search Word" />
         <button type="submit">Search</button>
