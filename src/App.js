@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Layout from "./pages/Layout";
 import AuthLayout from "./pages/AuthLayout";
 import Customers from "./pages/Customers";
+import Customers from "./pages/Customers";
 
 function App() {
   return (
