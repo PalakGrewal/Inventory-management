@@ -1,5 +1,6 @@
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
 
 export default function SignUp() {
 
