@@ -3,6 +3,8 @@ import Modal from '../components/AddOrderModal';
 
 const Orders = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
   const [dummyEntries, setDummyEntries] = useState([
     { id: 1, date: '2023-01-01', salesOrder: 'SO-001', reference: 'Ref-001', customerName: 'John Doe', status: 'Approved', amount: '$100.00', invoice: 'INV-001', payment: 'Paid' },
     { id: 2, date: '2023-01-05', salesOrder: 'SO-002', reference: 'Ref-002', customerName: 'Jane Doe', status: 'Pending', amount: '$150.00', invoice: 'INV-002', payment: 'Pending' },
@@ -20,12 +22,46 @@ const Orders = () => {
     setDummyEntries((prevEntries) => [...prevEntries, newProduct]);
   };
 
+  const handleDropdownChange = (e) => {
+    setSelectedOption(e.target.value);
+    setSearchTerm('');
+  }
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const filteredEntries = dummyEntries.filter((entry) => {
+    const matchSearchTerm =
+      entry.date.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.salesOrder.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.reference.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.status.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.amount.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.invoice.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      entry.payment.toLowerCase().includes(searchTerm.toLowerCase());
+
+    if (selectedOption === 'all') {
+      return matchSearchTerm;
+    } else if (selectedOption === 'approved') {
+      return entry.status === 'Approved' && matchSearchTerm;
+    } else if (selectedOption === 'pending') {
+      return entry.payment === 'Pending' && matchSearchTerm;
+    }
+    return matchSearchTerm;
+  });
+
   return (
     <div className="relative mt-4 sm:rounded-lg sm:space-y-0 ml-1 mr-1 w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
           <h1 className="text-xl font-bold">Sales Orders</h1>
-          <select className="mt-2 p-2 border border-gray-300 rounded">
+          <select
+            className="mt-2 p-2 border border-gray-300 rounded"
+            value={selectedOption}
+            onChange={handleDropdownChange}
+          >
             <option value="all">All Sales Orders</option>
             <option value="approved">Approved Orders</option>
             <option value="pending">Pending Orders</option>
@@ -44,10 +80,17 @@ const Orders = () => {
             type="text"
             placeholder="Search for items"
             className="p-2 border border-gray-300 rounded focus:ring focus:border-blue-300"
+            value={searchTerm}
+            onChange={handleSearchChange}
           />
         </div>
       </div>
-      
+
+      {/* Display invalid search term message */}
+      {searchTerm && filteredEntries.length === 0 && (
+        <p className='text-red-500'>No matching orders found for "{searchTerm}".</p>
+      )}
+
       {/* Table */}
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -85,7 +128,7 @@ const Orders = () => {
         </thead>
         <tbody>
           {/* Render dummy entries */}
-          {dummyEntries.map((entry) => (
+          {filteredEntries.map((entry) => (
             <tr key={entry.id}>
               <td className="p-4">
                 <input
@@ -107,7 +150,7 @@ const Orders = () => {
       </table>
 
       {/* Modal for adding new product */}
-      {isModalOpen && <Modal closeModal={closeModal} addProductToTable={handleAddProductToTable}/>}
+      {isModalOpen && <Modal closeModal={closeModal} addProductToTable={handleAddProductToTable} />}
     </div>
   );
 };
