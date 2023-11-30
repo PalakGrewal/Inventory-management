@@ -8,7 +8,6 @@ import Orders from "./pages/Orders";
 import Reports from "./pages/Reports";
 import Roles from "./pages/Roles";
 import Settings from "./pages/Settings";
-import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
 import Search from "./pages/Search";
 import SignUp from "./pages/SignUp";
@@ -24,7 +23,7 @@ function App() {
     <div className="flex flex-col h-screen text-base">
       <Routes>
         <Route element={<Layout />}>
-        <Route path="/" element={<SignUp />} />
+          <Route path="/" element={<SignUp />} />
           <Route path="/sign-in" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />} />
         </Route>

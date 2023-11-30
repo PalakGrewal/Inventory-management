@@ -37,7 +37,6 @@ const Sidebar = ({ children }) => {
   ];
 
   return (
-    <div className="flex ">
     <div className="flex">
       <div
         className={`sidebar flex flex-col text-white bg-gray-700 ${
@@ -71,7 +70,6 @@ const Sidebar = ({ children }) => {
       >
         {children}
       </div>
-    </div>
     </div>
   );
 };
