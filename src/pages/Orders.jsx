@@ -53,7 +53,7 @@ const Orders = () => {
   });
 
   return (
-    <div className="relative mt-4 sm:rounded-lg sm:space-y-0 ml-1 mr-1 w-full">
+    <div className="h-[88vh] overflow-y-scroll p-10 w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
           <h1 className="text-xl font-bold">Sales Orders</h1>

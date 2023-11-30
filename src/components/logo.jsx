@@ -5,7 +5,7 @@ const Logo = () => {
 
   return (
     <div className='App'>
-        <span className='font-bold text-red-200'>Stokify {" "}</span>
+        <span className='font-bold text-4xl text-red-200'>Stokify {" "}</span>
 
         <span className='text-gray-200' >
           <Typewriter
