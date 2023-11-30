@@ -9,7 +9,6 @@ import { MdProductionQuantityLimits } from "react-icons/md";
 import { MdCategory } from "react-icons/md";
 import { MdSpaceDashboard } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
-import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
