@@ -27,7 +27,7 @@ const Inventory = () => {
                             <th>Pick Stock</th>
                             <th>Picked Stock</th>
                             <th>Back Order</th>
-                            <th>Cteate Time</th>
+                            <th>Create Time</th>
                             <th>Update Time</th>
                         </tr>
                     </thead>

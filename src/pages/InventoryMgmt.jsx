@@ -7,4 +7,4 @@ const InventoryMgmt = () => {
   )
 }
 
-export default InventoryMgmt
+export default InventoryMgmt;

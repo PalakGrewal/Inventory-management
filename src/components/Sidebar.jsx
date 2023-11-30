@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaTh, FaBars, FaUsers } from "react-icons/fa";
 import { IoIosLogOut } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
-import { IoNotifications, IoSettings } from "react-icons/io5";
+import { IoSettings } from "react-icons/io5";
+import { FaPeopleGroup } from "react-icons/fa6";
 import { TbFileReport } from "react-icons/tb";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { MdCategory } from "react-icons/md";
@@ -28,9 +29,9 @@ const Sidebar = ({ children }) => {
     { path: "/roles", name: "Roles", icon: <FaUsers /> },
     { path: "/settings", name: "Settings", icon: <IoSettings /> },
     {
-      path: "/notifications",
-      name: "Notifications",
-      icon: <IoNotifications />,
+      path: "/customers",
+      name: "Customers",
+      icon: <FaPeopleGroup />,
     },
     { path: "/profile", name: "Profile", icon: <CgProfile /> },
     { path: "/sign-in", name: "Logout", icon: <IoIosLogOut /> },
@@ -71,6 +72,7 @@ const Sidebar = ({ children }) => {
       >
         {children}
       </div>
+    </div>
     </div>
   );
 };
