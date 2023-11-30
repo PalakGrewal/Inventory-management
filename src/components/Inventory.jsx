@@ -26,6 +26,7 @@ const Inventory = () => {
           <TableInventory/>
       </div>
     </section>
+    </section>
   );
 };
 
