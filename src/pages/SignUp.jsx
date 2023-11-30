@@ -4,9 +4,16 @@ import { Link, useNavigate } from "react-router-dom";
 export default function SignUp() {
 
   const navigate = useNavigate();
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
+
   const sumbmitHandler = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
+    navigate("/dashboard", { state: { user } });
   };
 
   return (
