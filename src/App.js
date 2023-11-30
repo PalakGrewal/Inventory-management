@@ -18,6 +18,7 @@ import Layout from "./pages/Layout";
 import AuthLayout from "./pages/AuthLayout";
 import Customers from "./pages/Customers";
 
+
 function App() {
   return (
     <div className="flex flex-col h-screen text-base">
@@ -34,9 +35,10 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/reports" element={<Reports />} />
-          <Route path="/roles" element={<Roles />} />
-          <Route path="/settings" element={<Settings />} />
           <Route path="/customers" element={<Customers />} />
+          {/* <Route path="/roles" element={<Roles />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/notifications" element={<Notifications />} /> */}
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />

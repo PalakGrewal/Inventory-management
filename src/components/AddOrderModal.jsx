@@ -69,7 +69,7 @@ const AddOrderModal = ({ closeModal, addProductToTable }) => {
       className="fixed inset-0 overflow-y-auto"
       overlayClassName="fixed inset-0 z-40 backdrop-filter"
     >
-      <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+      <div className="bg-white mx-96 sm:p-6 sm:pb-4 bg-slate-500 ">
         <h3 className="text-lg font-medium leading-6 text-gray-900" id="modal-headline">
           Add New Order
         </h3>

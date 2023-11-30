@@ -9,13 +9,9 @@ const Dashboard = () => {
 
   const location = useLocation();
   return (
-
-  
-
-    <div>
+    <div className="h-[88vh] overflow-y-scroll p-10">
       <Kpi />
-      <Chart/>
-     
+      <Chart/>     
       <Table/>
     </div>
   );

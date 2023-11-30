@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -35,10 +36,15 @@ export default function SignUp() {
     } catch (e) {
       console.log(e);
     }
-  };
+  const [user, setUser] = useState({
+    username: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
   return (
-    <form onSubmit={sumbmitHandler}>
+    <form onSubmit={sumbmitHandler} className="overflow-y-scroll mt-6 p-10">
       <div className="flex flex-col pl-9 pt-5 space-y-12 w-1/2">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base font-semibold leading-7 text-gray-900">
@@ -197,4 +203,4 @@ export default function SignUp() {
       </div>
     </form>
   );
-}
+  }

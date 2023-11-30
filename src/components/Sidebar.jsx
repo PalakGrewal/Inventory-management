@@ -17,27 +17,24 @@ const Sidebar = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     { path: "/dashboard", name: "Dashboard", icon: <MdSpaceDashboard /> },
-    {
-      path: "/inventoryMgmt",
-      name: "Inventory Management",
-      icon: <GrSystem />,
-    },
+    { path: "/inventoryMgmt", name: "Inventory Management", icon: <GrSystem />},
     { path: "/categories", name: "Categories", icon: <MdCategory /> },
     { path: "/orders", name: "Orders", icon: <MdProductionQuantityLimits /> },
-    { path: "/reports", name: "Reports", icon: <TbFileReport /> },
-    { path: "/roles", name: "Roles", icon: <FaUsers /> },
-    { path: "/settings", name: "Settings", icon: <IoSettings /> },
-    {
-      path: "/customers",
-      name: "Customers",
-      icon: <FaPeopleGroup />,
-    },
+    // { path: "/reports", name: "Reports", icon: <TbFileReport /> },
+    // { path: "/roles", name: "Roles", icon: <FaUsers /> },
+    // { path: "/settings", name: "Settings", icon: <IoSettings /> },
+    { path: "/customers", name: "Customers", icon: <FaPeopleGroup />, },
     { path: "/profile", name: "Profile", icon: <CgProfile /> },
     { path: "/sign-in", name: "Logout", icon: <IoIosLogOut /> },
   ];
 
   return (
+<<<<<<< HEAD
     <div className="flex">
+=======
+
+    <div className="flex h-[88vh]">
+>>>>>>> c0d221bed42c3163c89f601c610787e8fe5a7a9d
       <div
         className={`sidebar flex flex-col text-white bg-gray-700 ${
           isOpen ? "w-48" : "w-16"
@@ -66,10 +63,10 @@ const Sidebar = ({ children }) => {
       <div
         className={`main-content ${
           isOpen ? "ml-2" : "ml-1/2"
-        } transition-all ease-in-out flex-grow min-h-screen`}
+        } transition-all ease-in-out flex-grow `}
       >
         {children}
-      </div>
+     
     </div>
   );
 };
