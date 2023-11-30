@@ -125,7 +125,6 @@ const Orders = () => {
             onChange={handleDropdownChange}
           >
             <option value="all">All items</option>
-            <option value="approved">Electronics</option>
             <option value="approved">Clothing</option>
             <option value="pending">Home and Living</option>
           </select>
