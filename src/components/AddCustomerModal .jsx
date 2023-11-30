@@ -8,9 +8,10 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
   const [customerData, setCustomerData] = useState({
     customerName: '',
     phoneNumber: '',
+    salesOrder: '', // Add missing field
     lastPurchaseDate: '',
     loyaltyPoints: 0,
-    activeStatus: true,
+    activeStatus: false,
   });
 
   const handleInputChange = (e) => {
@@ -27,6 +28,7 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
         id: new Date().getTime(),
         customerName: customerData.customerName,
         phoneNumber: customerData.phoneNumber,
+        salesOrder: customerData.salesOrder, // Add missing field
         lastPurchaseDate: customerData.lastPurchaseDate,
         loyaltyPoints: parseInt(customerData.loyaltyPoints) || 0,
         activeStatus: customerData.activeStatus,
@@ -39,7 +41,7 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
 
   return (
     <Modal
-      isOpen={true} // Make sure to handle the isOpen prop appropriately in your actual implementation
+      isOpen={true}
       onRequestClose={closeModal}
       className="fixed inset-0 overflow-y-auto"
       overlayClassName="fixed inset-0 z-40 backdrop-filter"
@@ -48,9 +50,7 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
         <h3 className="text-lg font-medium leading-6 text-gray-900" id="modal-headline">
           Add New Customer
         </h3>
-        {/* Form for adding a new customer */}
         <form>
-          {/* Customer Name Input Field */}
           <div className="mb-4">
             <label htmlFor="customerName" className="block text-sm font-medium text-gray-700">
               Customer Name
@@ -64,8 +64,6 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
               onChange={handleInputChange}
             />
           </div>
-
-          {/* Phone Number Input Field */}
           <div className="mb-4">
             <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700">
               Phone Number
@@ -79,8 +77,19 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
               onChange={handleInputChange}
             />
           </div>
-
-          {/* Last Purchase Date Input Field */}
+          <div className="mb-4">
+            <label htmlFor="salesOrder" className="block text-sm font-medium text-gray-700">
+              Sales Order
+            </label>
+            <input
+              type="text"
+              name="salesOrder"
+              id="salesOrder"
+              className="mt-1 p-2 border border-gray-300 rounded w-full"
+              value={customerData.salesOrder}
+              onChange={handleInputChange}
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="lastPurchaseDate" className="block text-sm font-medium text-gray-700">
               Last Purchase Date
@@ -94,8 +103,6 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
               onChange={handleInputChange}
             />
           </div>
-
-          {/* Loyalty Points Input Field */}
           <div className="mb-4">
             <label htmlFor="loyaltyPoints" className="block text-sm font-medium text-gray-700">
               Loyalty Points
@@ -109,8 +116,6 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
               onChange={handleInputChange}
             />
           </div>
-
-          {/* Active Status Checkbox */}
           <div className="mb-4">
             <label className="block text-sm font-medium text-gray-700">
               Active Status
@@ -124,8 +129,6 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
               onChange={() => setCustomerData((prevData) => ({ ...prevData, activeStatus: !prevData.activeStatus }))}
             />
           </div>
-
-          {/* Buttons */}
           <div className="mt-4">
             <button
               type="button"

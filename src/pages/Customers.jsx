@@ -1,7 +1,9 @@
+
 import React, { useState, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { IoMdPrint } from "react-icons/io";
-import Modal from '../components/AddCustomerModal ';
+import AddCustomerModal from "../components/AddCustomerModal ";
+
 const Customers = () => {
   const componentRef = useRef();
 
@@ -11,81 +13,83 @@ const Customers = () => {
     onAfterPrint: () => console.log("Printed PDF successfully!"),
   });
 
-  const [dummyEntries, setDummyEntries] = useState([
+  const [customerEntries, setCustomerEntries] = useState([
     {
-      Customer_Id: 1,
-      Sales_Order: "SO001",
-      Customer_Name: "John Doe",
-      Phone_Number: "123-456-7890",
-      Last_Purchase_Date: "2023-01-15",
-      Loyalty_Points: 100,
+      id: 1,
+      salesOrder: "SO001",
+      customerName: "John Doe",
+      phoneNumber: "123-456-7890",
+      lastPurchaseDate: "2023-01-15",
+      loyaltyPoints: 100,
       Active_Status: true,
     },
     {
-      Customer_Id: 2,
-      Sales_Order: "SO002",
-      Customer_Name: "Jane Smith",
-      Phone_Number: "987-654-3210",
-      Last_Purchase_Date: "2023-02-10",
-      Loyalty_Points: 75,
+      id: 2,
+      salesOrder: "SO002",
+      customerName: "Jane Smith",
+      phoneNumber: "987-654-3210",
+      lastPurchaseDate: "2023-02-10",
+      loyaltyPoints: 75,
       Active_Status: true,
     },
     {
-      Customer_Id: 3,
-      Sales_Order: "SO003",
-      Customer_Name: "Alice Johnson",
-      Phone_Number: "555-123-4567",
-      Last_Purchase_Date: "2023-03-05",
-      Loyalty_Points: 50,
+      id: 3,
+      salesOrder: "SO003",
+      customerName: "Alice Johnson",
+      phoneNumber: "555-123-4567",
+      lastPurchaseDate: "2023-03-05",
+      loyaltyPoints: 50,
       Active_Status: false,
     },
     {
-      Customer_Id: 4,
-      Sales_Order: "SO004",
-      Customer_Name: "Bob Anderson",
-      Phone_Number: "777-888-9999",
-      Last_Purchase_Date: "2023-04-20",
-      Loyalty_Points: 120,
+      id: 4,
+      salesOrder: "SO004",
+      customerName: "Bob Anderson",
+      phoneNumber: "777-888-9999",
+      lastPurchaseDate: "2023-04-20",
+      loyaltyPoints: 120,
       Active_Status: true,
     },
     {
-      Customer_Id: 5,
-      Sales_Order: "SO005",
-      Customer_Name: "Eva Martinez",
-      Phone_Number: "444-333-2222",
-      Last_Purchase_Date: "2023-05-12",
-      Loyalty_Points: 90,
+      id: 5,
+      salesOrder: "SO005",
+      customerName: "Eva Martinez",
+      phoneNumber: "444-333-2222",
+      lastPurchaseDate: "2023-05-12",
+      loyaltyPoints: 90,
       Active_Status: true,
     },
     {
-      Customer_Id: 6,
-      Sales_Order: "SO006",
-      Customer_Name: "Michael Brown",
-      Phone_Number: "666-555-4444",
-      Last_Purchase_Date: "2023-06-25",
-      Loyalty_Points: 80,
+      id: 6,
+      salesOrder: "SO006",
+      customerName: "Michael Brown",
+      phoneNumber: "666-555-4444",
+      lastPurchaseDate: "2023-06-25",
+      loyaltyPoints: 80,
       Active_Status: false,
     },
     {
-      Customer_Id: 7,
-      Sales_Order: "SO007",
-      Customer_Name: "Sophia Garcia",
-      Phone_Number: "222-111-0000",
-      Last_Purchase_Date: "2023-07-08",
-      Loyalty_Points: 110,
+      id: 7,
+      salesOrder: "SO007",
+      customerName: "Sophia Garcia",
+      phoneNumber: "222-111-0000",
+      lastPurchaseDate: "2023-07-08",
+      loyaltyPoints: 110,
       Active_Status: true,
     },
     {
-      Customer_Id: 8,
-      Sales_Order: "SO008",
-      Customer_Name: "David Lee",
-      Phone_Number: "999-000-1111",
-      Last_Purchase_Date: "2023-08-30",
-      Loyalty_Points: 60,
+      id: 8,
+      salesOrder: "SO008",
+      customerName: "David Lee",
+      phoneNumber: "999-000-1111",
+      lastPurchaseDate: "2023-08-30",
+      loyaltyPoints: 60,
       Active_Status: true,
     },
   ]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -93,32 +97,32 @@ const Customers = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const handleAddProductToTable = (newProduct) => {
-    setDummyEntries((prevEntries) => [...prevEntries, newProduct]);
+
+  const handleAddCustomerToTable = (newCustomer) => {
+    setCustomerEntries((prevEntries) => [...prevEntries, newCustomer]);
   };
 
   return (
     <div className="h-[88vh] overflow-y-scroll p-10 w-full" ref={componentRef}>
-           {/* <button
-            className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
-            onClick={openModal}
-          >
-            Add New Customer
-          </button> */}
       <div className="flex justify-end pb-8">
-        {" "}
         <button
-          className="py-1 px-2  bg-red-400 rounded hover:bg-red-500"
+          className="mr-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300"
           onClick={handlePrint}
         >
           <IoMdPrint className="inline" /> Customer List
+        </button>
+        <button
+          className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          onClick={openModal}
+        >
+          Add New Customer
         </button>
       </div>
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3 border-b border-gray-300">
-              Customer_Id
+              Customer ID
             </th>
             <th scope="col" className="px-6 py-3 border-b border-gray-300">
               Customer Name
@@ -141,38 +145,174 @@ const Customers = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Render dummy entries */}
-          {dummyEntries.map((entry) => (
-            <tr key={entry.Customer_Id}>
+          {customerEntries.map((customer) => (
+            <tr key={customer.id}>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Customer_Id}
+                {customer.id}
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Customer_Name}
+                {customer.customerName}
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Sales_Order}
+                {customer.salesOrder}
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Phone_Number}
+                {customer.phoneNumber}
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Last_Purchase_Date}
-              </td>
-              <td className="px-6 py-3 border-b border-gray-300 text-center">
-                {entry.Loyalty_Points}
+                {customer.lastPurchaseDate}
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                {entry.Active_Status ? "Active" : "Inactive"}
+                {customer.loyaltyPoints}
+              </td>
+              <td className="px-6 py-3 border-b border-gray-300">
+                {customer.activeStatus ? "Active" : "Inactive"}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {isModalOpen && <Modal closeModal={closeModal} addProductToTable={handleAddProductToTable}/>}
- 
+      {isModalOpen && (
+        <AddCustomerModal
+          closeModal={closeModal}
+          addCustomerToTable={handleAddCustomerToTable}
+        />
+      )}
     </div>
   );
 };
 
 export default Customers;
+// Customers.js
+
+// import React, { useState, useRef, useEffect } from "react";
+// import { useReactToPrint } from "react-to-print";
+// import { IoMdPrint } from "react-icons/io";
+// import AddCustomerModal from "../components/AddCustomerModal ";
+
+// const Customers = () => {
+//   const componentRef = useRef();
+
+//   const handlePrint = useReactToPrint({
+//     content: () => componentRef.current,
+//     documentTitle: "Customer List",
+//     onAfterPrint: () => console.log("Printed PDF successfully!"),
+//   });
+
+//   const [customerEntries, setCustomerEntries] = useState(() => {
+//     const storedData = localStorage.getItem("customerEntries");
+//     return storedData
+//       ? JSON.parse(storedData)
+//       : [
+//           {
+//             id: 1,
+//             salesOrder: "SO001",
+//             customerName: "John Doe",
+//             phoneNumber: "123-456-7890",
+//             lastPurchaseDate: "2023-01-15",
+//             loyaltyPoints: 100,
+//             activeStatus: true,
+//           },
+//           // Add more initial data as needed
+//         ];
+//   });
+
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   useEffect(() => {
+//     localStorage.setItem("customerEntries", JSON.stringify(customerEntries));
+//   }, [customerEntries]);
+
+//   const openModal = () => {
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   const handleAddCustomerToTable = (newCustomer) => {
+//     setCustomerEntries((prevEntries) => [...prevEntries, newCustomer]);
+//   };
+
+//   return (
+//     <div className="h-[88vh] overflow-y-scroll p-10 w-full" ref={componentRef}>
+//       <div className="flex justify-end pb-8">
+//         <button
+//           className="mr-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300"
+//           onClick={handlePrint}
+//         >
+//           <IoMdPrint className="inline" /> Customer List
+//         </button>
+//         <button
+//           className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+//           onClick={openModal}
+//         >
+//           Add New Customer
+//         </button>
+//       </div>
+//       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+//         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+//           <tr>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Customer ID
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Customer Name
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Sales Order
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Phone Number
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Last Purchase Date
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Loyalty Points
+//             </th>
+//             <th scope="col" className="px-6 py-3 border-b border-gray-300">
+//               Active Status
+//             </th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {customerEntries.map((customer) => (
+//             <tr key={customer.id}>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.id}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.customerName}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.salesOrder}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.phoneNumber}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.lastPurchaseDate}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.loyaltyPoints}
+//               </td>
+//               <td className="px-6 py-3 border-b border-gray-300">
+//                 {customer.activeStatus ? "Active" : "Inactive"}
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//       {isModalOpen && (
+//         <AddCustomerModal
+//           closeModal={closeModal}
+//           addCustomerToTable={handleAddCustomerToTable}
+//         />
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Customers;
