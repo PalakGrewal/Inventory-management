@@ -42,7 +42,7 @@ const data = [
 
 function Table() {
   return (
-    <div >
+    <div>
       <H1 data="Top selling items"></H1>
       <table className='pl-8 pt-8'>
         <thead>
