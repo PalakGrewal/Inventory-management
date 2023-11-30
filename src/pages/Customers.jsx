@@ -99,12 +99,9 @@ const Customers = () => {
 
   return (
     <div className="h-[88vh] overflow-y-scroll p-10 w-full" ref={componentRef}>
-           {/* <button
-            className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
-            onClick={openModal}
-          >
-            Add New Customer
-          </button> */}
+      <div className="flex flex-1 justify-start text-4xl font-bold">
+        <h1>All Customers</h1>
+      </div>
       <div className="flex justify-end pb-8">
         {" "}
         <button

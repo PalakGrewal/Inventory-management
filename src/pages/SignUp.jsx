@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -36,12 +35,7 @@ export default function SignUp() {
     } catch (e) {
       console.log(e);
     }
-  const [user, setUser] = useState({
-    username: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
+  }
 
   return (
     <form onSubmit={sumbmitHandler} className="overflow-y-scroll mt-6 p-10">
