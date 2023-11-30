@@ -2,9 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Profile = () => {
-  // Use useLocation to get the location object
   const location = useLocation();
-  // Access the user object from the location state
   const user = location.state?.user || {};
 
   return (
