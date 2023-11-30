@@ -22,12 +22,9 @@ const Orders = () => {
 
   return (
     <div className="relative mt-4 sm:rounded-lg sm:space-y-0 ml-1 mr-1 w-full">
-      {/* Header */}
       <div className="flex items-center justify-between pb-4">
         <div>
           <h1 className="text-xl font-bold">Sales Orders</h1>
-          {/* Dropdown for sales order filtering */}
-          {/* You can customize the options based on your requirements */}
           <select className="mt-2 p-2 border border-gray-300 rounded">
             <option value="all">All Sales Orders</option>
             <option value="approved">Approved Orders</option>
