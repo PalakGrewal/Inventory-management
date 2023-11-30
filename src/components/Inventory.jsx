@@ -10,7 +10,7 @@ const Inventory = () => {
       <section className="inventory h-[88vh] overflow-y-scroll p-10 w-full">
         <div>
           <h2 className="flex flex-1 justify-start text-4xl font-bold">
-            Inventory Management
+            Inventory Managements
           </h2>
         </div>
         <div className="flex flex-1 mt-20">
