@@ -29,8 +29,8 @@ const data = [
     prod_image:
       "https://dukaan.b-cdn.net/700x700/webp/786890/269f0e92-5de9-4b8c-aa2c-740359619486.png",
     Name: "Wall Decor Mirrors",
-    pur_price: 10,
-    sell_price: 20,
+    pur_price: 1000,
+    sell_price: 2000,
     onhand_units: "",
     sold_units:"",
     units: "pcs",
