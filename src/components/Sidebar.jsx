@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { FaTh, FaBars, FaUsers } from "react-icons/fa";
 import { IoIosLogOut } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
-import { IoNotifications, IoSettings } from "react-icons/io5";
+import { IoSettings } from "react-icons/io5";
+import { FaPeopleGroup } from "react-icons/fa6";
 import { TbFileReport } from "react-icons/tb";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { MdCategory } from "react-icons/md";
 import { MdSpaceDashboard } from "react-icons/md";
 import { GrSystem } from "react-icons/gr";
-import { IoMdClose } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = ({ children }) => {
@@ -17,29 +17,22 @@ const Sidebar = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     { path: "/dashboard", name: "Dashboard", icon: <MdSpaceDashboard /> },
-    {
-      path: "/inventoryMgmt",
-      name: "Inventory Management",
-      icon: <GrSystem />,
-    },
+    { path: "/inventoryMgmt", name: "Inventory Management", icon: <GrSystem />},
     { path: "/categories", name: "Categories", icon: <MdCategory /> },
     { path: "/orders", name: "Orders", icon: <MdProductionQuantityLimits /> },
-    { path: "/reports", name: "Reports", icon: <TbFileReport /> },
-    { path: "/roles", name: "Roles", icon: <FaUsers /> },
-    { path: "/settings", name: "Settings", icon: <IoSettings /> },
-    {
-      path: "/notifications",
-      name: "Notifications",
-      icon: <IoNotifications />,
-    },
+    // { path: "/reports", name: "Reports", icon: <TbFileReport /> },
+    // { path: "/roles", name: "Roles", icon: <FaUsers /> },
+    // { path: "/settings", name: "Settings", icon: <IoSettings /> },
+    { path: "/customers", name: "Customers", icon: <FaPeopleGroup />, },
     { path: "/profile", name: "Profile", icon: <CgProfile /> },
     { path: "/sign-in", name: "Logout", icon: <IoIosLogOut /> },
   ];
 
   return (
-    <div className="flex">
+
+    <div className="flex h-[88vh]">
       <div
-        className={`sidebar flex flex-col gap-3 text-white bg-gray-700 ${
+        className={`sidebar flex flex-col text-white bg-gray-700 ${
           isOpen ? "w-48" : "w-16"
         } mt-2 ml-2 mb-2 rounded text-4xl transition-all ease-in-out`}
       >
@@ -65,11 +58,12 @@ const Sidebar = ({ children }) => {
       </div>
       <div
         className={`main-content ${
-          isOpen ? "ml-48" : "ml-16"
-        } transition-all ease-in-out flex-grow min-h-screen p-4`}
+          isOpen ? "ml-2" : "ml-1/2"
+        } transition-all ease-in-out flex-grow `}
       >
         {children}
-      </div>
+     
+    </div>
     </div>
   );
 };
