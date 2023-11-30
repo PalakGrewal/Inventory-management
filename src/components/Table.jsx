@@ -89,40 +89,12 @@ const HighDemand = [
 
 function Table() {
   return (
-<<<<<<< HEAD
-    <div>
-      <H1 data="Top selling items"></H1>
-      <table className='pl-8 pt-8'>
-        <thead>
-          <tr>
-            <td className="p-2">
-              <Hgray data="Product Image">Product Image</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Item Name">Item Name</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Items Sold">Items Sold</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="On Hand">On Hand</Hgray>
-            </td>
-            <td className="p-2">
-              <Hgray data="Units">Units</Hgray>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((value, key) => (
-            <tr key={key} className='hover:bg-gray-200 rounded-lg'>
-=======
     <div className="pt-10 flex flex-wrap gap-6">
       <div className="p-4 basis-1/2" >
         <H1 data="Top selling items"></H1>
         <table className="pl-8 pt-8 text-4xl">
           <thead className="">
             <tr>
->>>>>>> 5ec28a3930545de0fa34765528bacf4a76d19eb1
               <td className="p-2">
                 <Hgray data="Photo">Product Image</Hgray>
               </td>
