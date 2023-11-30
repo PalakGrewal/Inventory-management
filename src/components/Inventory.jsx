@@ -2,7 +2,7 @@ import React from 'react'
 
 const Inventory = () => {
     return (
-        <section className="inventory">
+        <section className="h-[88vh] overflow-y-scroll p-10 inventory">
             <table>
                 <tr>
                     <td><a href="#">Stock List</a></td>

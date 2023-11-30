@@ -4,7 +4,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <div className="top_section top-0  text-white bg-gray-700 mt-2 mx-2 rounded p-2 flex justify-between items-center">
+    <div className="top_section top-0  text-white bg-gray-700 mt-2 mx-2 rounded p-2 flex justify-between items-center h-[10vh]">
       <Link to='/'>
         <Logo className="text-2xl" />
       </Link>

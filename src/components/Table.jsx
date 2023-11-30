@@ -89,7 +89,7 @@ const HighDemand = [
 
 function Table() {
   return (
-    <div className="flex flex-wrap gap-6">
+    <div className="pt-10 flex flex-wrap gap-6">
       <div className="p-4 basis-1/2" >
         <H1 data="Top selling items"></H1>
         <table className="pl-8 pt-8 text-4xl">

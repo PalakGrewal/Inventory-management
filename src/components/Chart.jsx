@@ -43,11 +43,11 @@ function Chart() {
 
   return (
     
-    <div className="mt-5 border-[10px] p-2 gray-700 flex flex-wrap ">
+    <div className="mt-10 p-2 rounded-lg flex flex-wrap">
       <div className="basis-1/2 ">
         <H1 data="Sales Order " />
         <div className="  pl-10 max-h-80">
-          <Doughnut data={sales} height={100} width={200} options={options} />
+          <Doughnut  data={sales} height={100} width={200} options={options} />
         </div>
       </div>
       <div className="basis-1/2">
