@@ -10,7 +10,6 @@ const Inventory = () => {
       <div>
           <TableInventory/>
       </div>
-    
   );
 };
 

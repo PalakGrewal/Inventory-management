@@ -59,7 +59,7 @@ const Orders = () => {
     {
       id: 6,
       item_img:
-        "https://plus.unsplash.com/premium_photo-1661317306727-64c7a1339a6c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZXJuJTIwa2l0Y2hlbiUyMHdpdGglMjBzdGFpbmxlc3MlMjBzdGVlbCUyMGFwcGxpYW5jZXN8ZW58MHx8MHx8fDA%3D",
+        "https://unsplash.com/photos/modern-kitchen-with-stainless-steel-appliances-PUqOpyvH3FQ",
       item_name: "Refrigerator",
       pur_price: "$800",
       sell_price: "$1000",
@@ -72,7 +72,7 @@ const Orders = () => {
     {
       id: 7,
       item_img:
-        "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/front-load-washing-machine-UBQ09czVc3A",
       item_name: "Washing Machine",
       pur_price: "$600",
       sell_price: "$750",
@@ -85,7 +85,7 @@ const Orders = () => {
     {
       id: 8,
       item_img:
-        "https://images.unsplash.com/photo-1630329273801-8f629dba0a72?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9sZGVkJTIwY2xvdGhzfGVufDB8fDB8fHww",
+        "https://unsplash.com/photos/folded-clothes-on-shelves-5ygUGpONucc",
       item_name: "T-Shirt",
       pur_price: "$20",
       sell_price: "$30",
@@ -98,6 +98,7 @@ const Orders = () => {
     {
       id: 9,
       item_img:
+
         "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       item_name: "Jeans",
       pur_price: "$40",
@@ -242,6 +243,8 @@ const Orders = () => {
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
               </td>
+              <td className="px-6 py-3 border-b border-gray-300">
+                <img src={entry.item_img} alt="item-image" height={64} width={64}/>
               <td className="flex flex-1 px-6 py-3 border-b border-gray-300">
                 <img src={entry.item_img} alt="item-image" height={80} width={80}/>
               </td>
