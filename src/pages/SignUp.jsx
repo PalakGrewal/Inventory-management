@@ -12,31 +12,15 @@ export default function SignUp() {
   const sumbmitHandler = async (e) => {
     e.preventDefault();
 
-    try {
-      await axios
-        .post("http://localhost:3000/sign-up", {
-          username,
-          email,
-          password,
-          confirmPassword,
-        })
-        .then((res) => {
-          if (res.data === "Email already exists") {
-            alert("User already exists");
-            // navigate("/dashboard");
-          } else if ((res.data = "not exists")) {
-            navigate("/dashboard", { state: { id: email } });
-          }
-        })
-        .catch((err) => {
-          alert("Login Failed");
-          console.log(err);
-        });
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
+    await axios
+      .post("http://localhost:3000/sign-up", {
+        username,
+        email,
+        password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <form onSubmit={sumbmitHandler} className="overflow-y-scroll mt-6 p-10">
       <div className="flex flex-col pl-9 pt-5 space-y-12 w-1/2">
@@ -197,4 +181,4 @@ export default function SignUp() {
       </div>
     </form>
   );
-  }
+}

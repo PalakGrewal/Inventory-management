@@ -25,28 +25,36 @@ app.post("/sign-in", async (req, res) => {
 });
 
 app.post("/sign-up", async (req, res) => {
-  const { username, email, password } = req.body;
+  // const { username, email, password } = req.body;
 
-  const data = {
-    username: username,
-    email: email,
-    password: password,
-  };
+  // const data = {
+  //   username: username,
+  //   email: email,
+  //   password: password,
+  // };
 
-  try {
-    const check = await Collection.findOne({ email: email });
+  // try {
+  //   const check = await Collection.findOne({ email: email });
 
-    if (check) {
-      res.json("Email already exists");
-    } else {
-      res.json("not exists");
-      await Collection.insertMany([data]);
-    }
-  } catch (error) {
-    res.json("not exists");
-  }
-});
+  //   if (check) {
+  //     res.json("Email already exists");
+  //   } else {
+  //     res.json("not exists");
+  //     await Collection.insertMany([data]);
+  //   }
+  // } catch (error) {
+  //   res.json("not exists");
+  // }
 
-app.listen(3000, () => {
-  console.log("server started on port 3001");
+  Collection.create(req.body)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+
+  app.listen(3000, () => {
+    console.log("server started on port 3000");
+  });
 });
