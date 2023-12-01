@@ -61,7 +61,7 @@ const Categories = () => {
   };
 
   const handleEditCategory = (categoryId, newName) => {
-    // Simulate editing a category
+
     const updatedCategories = categories.map((category) =>
       category.id === categoryId ? { ...category, name: newName } : category
     );

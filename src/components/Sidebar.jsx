@@ -17,19 +17,22 @@ const Sidebar = ({ children }) => {
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     { path: "/dashboard", name: "Dashboard", icon: <MdSpaceDashboard /> },
-    { path: "/inventoryMgmt", name: "Inventory Management", icon: <GrSystem />},
+    {
+      path: "/inventoryMgmt",
+      name: "Inventory Management",
+      icon: <GrSystem />,
+    },
     { path: "/categories", name: "Categories", icon: <MdCategory /> },
     { path: "/orders", name: "Orders", icon: <MdProductionQuantityLimits /> },
     // { path: "/reports", name: "Reports", icon: <TbFileReport /> },
     // { path: "/roles", name: "Roles", icon: <FaUsers /> },
     // { path: "/settings", name: "Settings", icon: <IoSettings /> },
-    { path: "/customers", name: "Customers", icon: <FaPeopleGroup />, },
+    { path: "/customers", name: "Customers", icon: <FaPeopleGroup /> },
     { path: "/profile", name: "Profile", icon: <CgProfile /> },
     { path: "/sign-in", name: "Logout", icon: <IoIosLogOut /> },
   ];
 
   return (
-
     <div className="flex h-[88vh]">
       <div
         className={`sidebar flex flex-col text-white bg-gray-700 ${
@@ -62,8 +65,7 @@ const Sidebar = ({ children }) => {
         } transition-all ease-in-out flex-grow `}
       >
         {children}
-     
-    </div>
+      </div>
     </div>
   );
 };

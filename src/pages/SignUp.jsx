@@ -1,22 +1,26 @@
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import axios from "axios";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
 
 export default function SignUp() {
-
   const navigate = useNavigate();
-  const [user, setUser] = useState({
-    username: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-  });
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const sumbmitHandler = (e) => {
+  const sumbmitHandler = async (e) => {
     e.preventDefault();
-    navigate("/dashboard", { state: { user } });
-  };
 
+    await axios
+      .post("http://localhost:3000/sign-up", {
+        username,
+        email,
+        password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <form onSubmit={sumbmitHandler} className="overflow-y-scroll mt-6 p-10">
       <div className="flex flex-col pl-9 pt-5 space-y-12 w-1/2">
@@ -42,6 +46,7 @@ export default function SignUp() {
                     autoComplete="username"
                     className="block flex-1 border-0 py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Enter Your Username"
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
               </div>
@@ -104,6 +109,8 @@ export default function SignUp() {
                   type="email"
                   autoComplete="email"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder=" Enter Your Email Address"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -120,6 +127,8 @@ export default function SignUp() {
                   name="password"
                   type="password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder=" Enter Your Password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -136,6 +145,8 @@ export default function SignUp() {
                   name="confirm-password"
                   type="password"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder=" Confirm Your Password"
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </div>
             </div>
