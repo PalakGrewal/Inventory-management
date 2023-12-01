@@ -4,12 +4,16 @@ import Modal from 'react-modal';
 Modal.setAppElement('#root');
 
 const AddCategoryModal = ({ isOpen, onRequestClose, onAddCategory }) => {
-  const [newCategory, setNewCategory] = useState('');
+  const [newCategory, setNewCategory] = useState({
+    name: '',
+    productCount: 0,
+    subcategories: [],
+  });
 
   const handleAddCategory = () => {
-    if (newCategory.trim() !== '') {
-      onAddCategory(newCategory.trim());
-      setNewCategory('');
+    if (newCategory.name.trim() !== '') {
+      onAddCategory(newCategory.name);
+      setNewCategory({ name: '', productCount: 0, subcategories: [] });
       onRequestClose();
     }
   };
@@ -38,10 +42,52 @@ const AddCategoryModal = ({ isOpen, onRequestClose, onAddCategory }) => {
             <input
               type="text"
               placeholder="Enter a new category"
-              value={newCategory}
-              onChange={(e) => setNewCategory(e.target.value)}
+              value={newCategory.name}
+              onChange={(e) => setNewCategory((prevCategory) => ({ ...prevCategory, name: e.target.value }))}
               className="border p-2 mb-4"
             />
+            <input
+              type="number"
+              placeholder='Enter product quantity'
+              value={newCategory.productCount}
+              onChange={(e) => setNewCategory((prevCategory) => ({ ...prevCategory, productCount: e.target.value }))}
+              className='border p-2 mb-4'
+            />
+            <div>
+              <h4 className='text-lg font-semibold mb-2'>Subcategories:</h4>
+              {newCategory.subcategories.map((subcategory, index) => (
+                <div key={index} className='flex items-center mb-2'>
+                  <input 
+                    type='text'
+                    placeholder={'Subcategory ${index + 1}'}
+                    value={subcategory}
+                    onChange={(e) => setNewCategory((prevCategory) => {
+                      const updatedSubCategories = [...prevCategory.subcategories];
+                      updatedSubCategories[index] = e.target.value;
+                      return { ...prevCategory, subcategories: updatedSubCategories};
+                    })}
+                    className='border p-2 mr-2'
+                  />
+                  <button 
+                    onClick = {() => setNewCategory((prevCategory) => {
+                      const updatedSubCategories = [...prevCategory.subcategories];
+                      updatedSubCategories.splice(index, 1);
+                      return { ...prevCategory, subcategories: updatedSubCategories};
+
+                    })}
+                    className='text-red-600'
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+              <button 
+                onClick={() => setNewCategory((prevCategory) => ({ ...prevCategory, subcategories: [...prevCategory.subcategories, ''] }))}
+                className='text-indigo-600'
+              >
+                Add Subcategory
+              </button>
+            </div>
             <div className="flex items-center justify-end">
               <button
                 onClick={handleAddCategory}
