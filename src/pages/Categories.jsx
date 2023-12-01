@@ -20,7 +20,12 @@ const Categories = () => {
     },
   ]);
 
-  const [newCategory, setNewCategory] = useState("");
+  const [newCategory, setNewCategory] = useState({
+    name: '',
+    productCount: 0,
+    subcategories: [],
+  });
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -43,7 +48,7 @@ const Categories = () => {
       subcategoriesOpen: false,
     };
 
-    setCategories([...categories, newCategoryData]);
+    setCategories([...categories, { ...newCategoryData, subcategoriesOpen: false }]);
     setIsModalOpen(false);
   };
 
@@ -56,7 +61,7 @@ const Categories = () => {
   };
 
   const handleEditCategory = (categoryId, newName) => {
-    // Simulate editing a category
+
     const updatedCategories = categories.map((category) =>
       category.id === categoryId ? { ...category, name: newName } : category
     );
@@ -91,7 +96,7 @@ const Categories = () => {
   }
 
   return (
-    <div className="h-[88vh] overflow-y-scroll p-10 container mx-auto ">
+    <div className="h-[88vh] overflow-y-scroll p-10 container mx-auto w-full">
       <h1 className="text-3xl font-bold mb-4">Inventory Categories</h1>
 
       <button
@@ -144,8 +149,8 @@ const Categories = () => {
             </div>
             {category.subcategoriesOpen && (
               <ul className="pl-4 mt-2">
-                {category.subcategories.map((subcategory) => (
-                  <li key={subcategory}>{subcategory}</li>
+                {category.subcategories.map((subcategory, index) => (
+                  <li key={index}>{subcategory}</li>
                 ))}
               </ul>
             )}

@@ -2,15 +2,15 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="h-[88vh] overflow-y-scroll p-10 w-full">
+    <div className=" flex flex-1 justify-center h-[88vh] overflow-y-scroll pt-20 ">
       <div>
         <div
-          className="h-52 ml-48 float-left  
-                            -mt-10 w-96 flex-col  
+          className="h-52 ml-auto float-left  
+                            -mt-10 w-100 flex-col  
                             rounded-xl bg-white bg-clip-border  
                             text-gray-700 shadow-2xl"
         >
-          <div className="p-6">
+          <div className="p-6 ">
             <h5
               className="text-center mr-4 mb-2  
                                    block font-sans text-xl  
@@ -46,7 +46,7 @@ const About = () => {
         </div>
       </div>
       <div
-        className="absolute mt-52 ml-48  
+        className="flex flex-1 justify-start absolute mt-52 ml-auto  
                         w-80 float-left border-2 p-2  
                         rounded-xl shadow-xl text-xl"
       >
