@@ -8,8 +8,8 @@ function AuthLayout() {
         <div className='h-[100vh]'>
           <Header className="h-[10vh]"/>
           <div className='flex'>
-          <Sidebar  />
-          <Outlet className=""/>   
+          <Sidebar className='sticky top-20' />
+          <Outlet />   
           </div>   
         </div>
     )

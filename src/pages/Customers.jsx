@@ -104,6 +104,7 @@ const Customers = () => {
 
   return (
     <div className="h-[88vh] overflow-y-scroll p-10 w-full" ref={componentRef}>
+          
       <div className="flex justify-end pb-8">
         <button
           className="mr-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 focus:outline-none focus:ring focus:border-blue-300"
