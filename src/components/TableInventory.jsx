@@ -8,21 +8,6 @@ const Orders = () => {
   const [selectedOption, setSelectedOption] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [dummyEntries, setDummyEntries] = useState([
-<<<<<<< HEAD
-    { id: 1, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Sneakers', pur_price: '$100', sell_price: '$150' , Onhand_units: '50', sold_units: '100', total_units: '150', dt_updated: '25-11-2023' },
-    { id: 2, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Smart Watch', pur_price: '$200', sell_price: '$250' , Onhand_units: '80', sold_units: '110', total_units: '190', dt_updated: '25-11-2023' },
-    { id: 4, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Laptop', pur_price: '$1200', sell_price: '$1500', Onhand_units: '25', sold_units: '50', total_units: '75', dt_updated: '25-11-2023', },
-    {
-      id: 5,
-      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
-      item_name: 'DSLR Camera',
-      pur_price: '$800',
-      sell_price: '$1000',
-      Onhand_units: '15',
-      sold_units: '30',
-      total_units: '45',
-      dt_updated: '25-11-2023',
-=======
     {
       id: 1,
       item_img:
@@ -69,23 +54,12 @@ const Orders = () => {
       sold_units: "30",
       total_units: "45",
       dt_updated: "25-11-2023",
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
     },
 
     {
       id: 6,
-<<<<<<< HEAD
-      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
-      item_name: 'Refrigerator',
-      pur_price: '$800',
-      sell_price: '$1000',
-      Onhand_units: '40',
-      sold_units: '60',
-      total_units: '100',
-      dt_updated: '25-11-2023',
-=======
       item_img:
-        "https://plus.unsplash.com/premium_photo-1661317306727-64c7a1339a6c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZXJuJTIwa2l0Y2hlbiUyMHdpdGglMjBzdGFpbmxlc3MlMjBzdGVlbCUyMGFwcGxpYW5jZXN8ZW58MHx8MHx8fDA%3D",
+        "https://unsplash.com/photos/modern-kitchen-with-stainless-steel-appliances-PUqOpyvH3FQ",
       item_name: "Refrigerator",
       pur_price: "$800",
       sell_price: "$1000",
@@ -93,23 +67,12 @@ const Orders = () => {
       sold_units: "60",
       total_units: "100",
       dt_updated: "25-11-2023",
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
     },
 
     {
       id: 7,
-<<<<<<< HEAD
-      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
-      item_name: 'Washing Machine',
-      pur_price: '$600',
-      sell_price: '$750',
-      Onhand_units: '20',
-      sold_units: '30',
-      total_units: '50',
-      dt_updated: '25-11-2023',
-=======
       item_img:
-        "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/front-load-washing-machine-UBQ09czVc3A",
       item_name: "Washing Machine",
       pur_price: "$600",
       sell_price: "$750",
@@ -117,23 +80,12 @@ const Orders = () => {
       sold_units: "30",
       total_units: "50",
       dt_updated: "25-11-2023",
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
     },
 
     {
       id: 8,
-<<<<<<< HEAD
-      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
-      item_name: 'T-Shirt',
-      pur_price: '$20',
-      sell_price: '$30',
-      Onhand_units: '100',
-      sold_units: '150',
-      total_units: '250',
-      dt_updated: '25-11-2023',
-=======
       item_img:
-        "https://images.unsplash.com/photo-1630329273801-8f629dba0a72?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9sZGVkJTIwY2xvdGhzfGVufDB8fDB8fHww",
+        "https://unsplash.com/photos/folded-clothes-on-shelves-5ygUGpONucc",
       item_name: "T-Shirt",
       pur_price: "$20",
       sell_price: "$30",
@@ -141,25 +93,12 @@ const Orders = () => {
       sold_units: "150",
       total_units: "250",
       dt_updated: "25-11-2023",
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
     },
 
     {
       id: 9,
-<<<<<<< HEAD
-      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
-      item_name: 'Jeans',
-      pur_price: '$40',
-      sell_price: '$50',
-      Onhand_units: '80',
-      sold_units: '120',
-      total_units: '200',
-      dt_updated: '25-11-2023',
-    }
-  ])
-=======
       item_img:
-        "https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://unsplash.com/photos/clothes-on-rack-inside-room-UE1Lzcxo77o",
       item_name: "Jeans",
       pur_price: "$40",
       sell_price: "$50",
@@ -169,7 +108,6 @@ const Orders = () => {
       dt_updated: "25-11-2023",
     },
   ]);
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -213,11 +151,7 @@ const Orders = () => {
     return matchSearchTerm;
   });
 
-<<<<<<< HEAD
-  return ( 
-=======
   return (
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
     <div className="w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
@@ -307,18 +241,8 @@ const Orders = () => {
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
               </td>
-<<<<<<< HEAD
-              <td className="px-6 py-3 border-b border-gray-300"><img src={entry.item_img}/></td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.item_name}</td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.pur_price}</td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.sell_price}</td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.Onhand_units}</td>
-              <td className="px-6 py-3 border-b border-gray-300 text-center">{entry.sold_units}</td> {/* Center alignment for the Amount column */}
-              <td className="px-6 py-3 border-b border-gray-300">{entry.total_units}</td>
-              <td className="px-6 py-3 border-b border-gray-300">{entry.dt_updated}</td>
-=======
               <td className="px-6 py-3 border-b border-gray-300">
-                <img src={entry.item_img} alt="item-image" height={80} width={80}/>
+                <img src={entry.item_img} alt="item-image" height={64} width={64}/>
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
                 {entry.item_name}
@@ -342,7 +266,6 @@ const Orders = () => {
               <td className="px-6 py-3 border-b border-gray-300">
                 {entry.dt_updated}
               </td>
->>>>>>> f4194f704e821e3140c100e298de7f6136522974
             </tr>
           ))}
         </tbody>
