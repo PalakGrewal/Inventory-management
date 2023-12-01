@@ -8,7 +8,7 @@ const AddCustomerModal = ({ closeModal, addCustomerToTable }) => {
   const [customerData, setCustomerData] = useState({
     customerName: '',
     phoneNumber: '',
-    salesOrder: '', // Add missing field
+    salesOrder: '',
     lastPurchaseDate: '',
     loyaltyPoints: 0,
     activeStatus: false,
