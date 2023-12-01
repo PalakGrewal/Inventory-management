@@ -21,8 +21,11 @@ const Inventory = () => {
       <div>
           <TableInventory/>
       </div>
+<<<<<<< HEAD
     </section>
     </section>
+=======
+>>>>>>> a45d731253a5a84f1b434b77e7d436cb09cf2c87
   );
 };
 

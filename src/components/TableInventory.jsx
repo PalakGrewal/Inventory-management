@@ -58,7 +58,7 @@ const Orders = () => {
     {
       id: 6,
       item_img:
-        "https://unsplash.com/photos/modern-kitchen-with-stainless-steel-appliances-PUqOpyvH3FQ",
+        "https://plus.unsplash.com/premium_photo-1661317306727-64c7a1339a6c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW9kZXJuJTIwa2l0Y2hlbiUyMHdpdGglMjBzdGFpbmxlc3MlMjBzdGVlbCUyMGFwcGxpYW5jZXN8ZW58MHx8MHx8fDA%3D",
       item_name: "Refrigerator",
       pur_price: "$800",
       sell_price: "$1000",
@@ -71,7 +71,7 @@ const Orders = () => {
     {
       id: 7,
       item_img:
-        "https://unsplash.com/photos/front-load-washing-machine-UBQ09czVc3A",
+        "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       item_name: "Washing Machine",
       pur_price: "$600",
       sell_price: "$750",
@@ -84,7 +84,7 @@ const Orders = () => {
     {
       id: 8,
       item_img:
-        "https://unsplash.com/photos/folded-clothes-on-shelves-5ygUGpONucc",
+        "https://images.unsplash.com/photo-1630329273801-8f629dba0a72?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Zm9sZGVkJTIwY2xvdGhzfGVufDB8fDB8fHww",
       item_name: "T-Shirt",
       pur_price: "$20",
       sell_price: "$30",
@@ -97,7 +97,7 @@ const Orders = () => {
     {
       id: 9,
       item_img:
-        "https://unsplash.com/photos/clothes-on-rack-inside-room-UE1Lzcxo77o",
+        "https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       item_name: "Jeans",
       pur_price: "$40",
       sell_price: "$50",
@@ -151,22 +151,23 @@ const Orders = () => {
   });
 
   return (
-    <div className="w-full">
+    <div className="w-full h-[88vh] p-10">
       <div className="flex items-center justify-between pb-4">
         <div>
-          <h1 className="text-xl font-bold">Inventory</h1>
+          <h1 className="text-3xl font-bold mb-4">Inventory Management</h1>
           <select
-            className="mt-2 p-2 border border-gray-300 rounded"
+            className=" p-2  border border-gray-300 rounded"
             value={selectedOption}
             onChange={handleDropdownChange}
           >
             <option value="all">All items</option>
+            <option value="approved">Electronics</option>
             <option value="approved">Clothing</option>
             <option value="pending">Home and Living</option>
           </select>
-          <button className="ml-8 w-4 h-4">
+          <button className=" ml-8 w-4 h-4 mb-8">
             <Pencil className="inline mr-2 w-4 h-4" />
-            Edit
+            <span className="flex justify-center font-semibold text-lg">Edit</span>
           </button>
         </div>
         <div className="flex items-center">
@@ -241,7 +242,7 @@ const Orders = () => {
                 />
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
-                <img src={entry.item_img} alt="item-image" height={64} width={64}/>
+                <img src={entry.item_img} alt="item-image" height={80} width={80}/>
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
                 {entry.item_name}
