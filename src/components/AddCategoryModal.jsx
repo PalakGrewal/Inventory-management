@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 
-Modal.setAppElement('#root'); // Set the root element for the modal
+Modal.setAppElement('#root');
 
 const AddCategoryModal = ({ isOpen, onRequestClose, onAddCategory }) => {
   const [newCategory, setNewCategory] = useState('');
@@ -10,7 +10,7 @@ const AddCategoryModal = ({ isOpen, onRequestClose, onAddCategory }) => {
     if (newCategory.trim() !== '') {
       onAddCategory(newCategory.trim());
       setNewCategory('');
-      onRequestClose(); // Close the modal after adding a category
+      onRequestClose();
     }
   };
 
