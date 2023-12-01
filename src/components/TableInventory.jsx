@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../components/AddOrderModal';
+import { ListFilter} from 'lucide-react';
 import { Pencil } from 'lucide-react';
 
 const Orders = () => {
@@ -7,12 +8,12 @@ const Orders = () => {
   const [selectedOption, setSelectedOption] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [dummyEntries, setDummyEntries] = useState([
-    { id: 1, item_img: 'https://unsplash.com/photos/pair-of-white-and-orange-athletic-shoes-on-white-box-dwKiHoqqxk8' , item_name: 'Sneakers', pur_price: '$100', sell_price: '$150' , Onhand_units: '50', sold_units: '100', total_units: '150', dt_updated: '25-11-2023' },
-    { id: 2, item_img: 'https://unsplash.com/photos/space-gray-apple-watch-with-black-sports-band-hbTKIbuMmBI', item_name: 'Smart Watch', pur_price: '$200', sell_price: '$250' , Onhand_units: '80', sold_units: '110', total_units: '190', dt_updated: '25-11-2023' },
-    { id: 4, item_img: 'https://unsplash.com/photos/modern-laptop-computer-on-wooden-table-T4u6X6xq2xk', item_name: 'Laptop', pur_price: '$1200', sell_price: '$1500', Onhand_units: '25', sold_units: '50', total_units: '75', dt_updated: '25-11-2023', },
+    { id: 1, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Sneakers', pur_price: '$100', sell_price: '$150' , Onhand_units: '50', sold_units: '100', total_units: '150', dt_updated: '25-11-2023' },
+    { id: 2, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Smart Watch', pur_price: '$200', sell_price: '$250' , Onhand_units: '80', sold_units: '110', total_units: '190', dt_updated: '25-11-2023' },
+    { id: 4, item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg', item_name: 'Laptop', pur_price: '$1200', sell_price: '$1500', Onhand_units: '25', sold_units: '50', total_units: '75', dt_updated: '25-11-2023', },
     {
       id: 5,
-      item_img: 'https://unsplash.com/photos/black-and-gray-dslr-camera-631748',
+      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
       item_name: 'DSLR Camera',
       pur_price: '$800',
       sell_price: '$1000',
@@ -24,7 +25,7 @@ const Orders = () => {
 
     {
       id: 6,
-      item_img: 'https://unsplash.com/photos/modern-kitchen-with-stainless-steel-appliances-PUqOpyvH3FQ',
+      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
       item_name: 'Refrigerator',
       pur_price: '$800',
       sell_price: '$1000',
@@ -36,7 +37,7 @@ const Orders = () => {
     
     {
       id: 7,
-      item_img: 'https://unsplash.com/photos/front-load-washing-machine-UBQ09czVc3A',
+      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
       item_name: 'Washing Machine',
       pur_price: '$600',
       sell_price: '$750',
@@ -48,7 +49,7 @@ const Orders = () => {
 
     {
       id: 8,
-      item_img: 'https://unsplash.com/photos/folded-clothes-on-shelves-5ygUGpONucc',
+      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
       item_name: 'T-Shirt',
       pur_price: '$20',
       sell_price: '$30',
@@ -60,7 +61,7 @@ const Orders = () => {
     
     {
       id: 9,
-      item_img: 'https://unsplash.com/photos/clothes-on-rack-inside-room-UE1Lzcxo77o',
+      item_img: 'https://loveincorporated.blob.core.windows.net/contentimages/gallery/4e8a2af4-c16c-4a97-b26c-3d3b28f27cd9-borscht-ukraine.jpg',
       item_name: 'Jeans',
       pur_price: '$40',
       sell_price: '$50',
@@ -113,27 +114,26 @@ const Orders = () => {
     return matchSearchTerm;
   });
 
-  return (
-    <div className="h-[88vh] overflow-y-scroll p-10 w-full">
+  return ( 
+    <div className="w-full">
       <div className="flex items-center justify-between pb-4">
         <div>
-          <h1 className="text-3xl font-bold mb-3">Inventory</h1>
+          <h1 className="text-xl font-bold">Inventory</h1>
           <select
             className="mt-2 p-2 border border-gray-300 rounded"
             value={selectedOption}
             onChange={handleDropdownChange}
           >
             <option value="all">All items</option>
-            <option value="all">Electronics</option>
             <option value="approved">Clothing</option>
             <option value="pending">Home and Living</option>
-          </select >
-          <button className='ml-8 h-4 w-full'><Pencil className="inline mr-2 w-4 h-4"/>Edit</button>
+          </select>
+          <button className='ml-8 w-4 h-4'><Pencil className="inline mr-2 w-4 h-4"/>Edit</button>
         </div>
         <div className="flex items-center">
           {/* Add New Product button linked to modal */}
           <button
-            className="mr-2 mt-12 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+            className="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
             onClick={openModal}
           >
             Add New Product
@@ -142,7 +142,7 @@ const Orders = () => {
           <input
             type="text"
             placeholder="Search for items"
-            className="p-2 mt-12 border border-gray-300 rounded focus:ring focus:border-blue-300"
+            className="p-2 border border-gray-300 rounded focus:ring focus:border-blue-300"
             value={searchTerm}
             onChange={handleSearchChange}
           />
