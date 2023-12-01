@@ -97,7 +97,7 @@ const Orders = () => {
     {
       id: 9,
       item_img:
-        "https://images.unsplash.com/photo-1603252109303-2751441dd157?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       item_name: "Jeans",
       pur_price: "$40",
       sell_price: "$50",
@@ -241,7 +241,7 @@ const Orders = () => {
                   className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                 />
               </td>
-              <td className="px-6 py-3 border-b border-gray-300">
+              <td className="flex flex-1 px-6 py-3 border-b border-gray-300">
                 <img src={entry.item_img} alt="item-image" height={80} width={80}/>
               </td>
               <td className="px-6 py-3 border-b border-gray-300">
