@@ -16,11 +16,12 @@ const EditProfileModal = ({ isOpen, onRequestClose, onSave }) => {
       onRequestClose={onRequestClose}
       contentLabel="Edit Modal"
     >
+      <div>
       <H1 data="Edit the Profile"></H1>
       <div className=" flex flex-wrap w-96">
         <div>
           <label htmlFor="editedName">Name:</label>
-          <input
+          <input className="px-2 bg-gray-200 m-2 rounded "
             type="text"
             id="editedName"
             value={editedName}
@@ -28,8 +29,9 @@ const EditProfileModal = ({ isOpen, onRequestClose, onSave }) => {
           />
         </div>
         <div>
-          <label htmlFor="editedEmail">Email:</label>
+          <label htmlFor="editedEmail">Email:{" "}</label>
           <input
+            className="bg-gray-200 m-2 rounded "
             type="text"
             id="editedEmail"
             value={editedEmail}
@@ -39,7 +41,7 @@ const EditProfileModal = ({ isOpen, onRequestClose, onSave }) => {
       </div>
       <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded m-4" onClick={handleSave}>Save</button>
       <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded m-4" onClick={onRequestClose}>Discard</button>
-    </Modal>
+</div>    </Modal>
   );
 };
 
